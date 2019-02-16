@@ -1,0 +1,29 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="5" rowHeight="250px">
+    <mat-grid-tile *ngFor="let card of cards">
+      <mat-card class="dashboard-card" >
+        <mat-card-header>
+          <mat-card-title>
+            Class {{card.title}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+          
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content class="dashboard-card-content">
+          <div>{{card.title}}</div>
+        </mat-card-content>
+        <mat-card-content class="dashboard-card-content-count">
+            <i class="fa fa-users fa-1x" aria-hidden="true"></i>
+          <div class="container">Students: {{card.count}}</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
