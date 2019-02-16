@@ -2,6 +2,7 @@ import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
+import { StudentsService } from '../services/students.service';
 
 // TODO: Replace this with your own data model type
 export interface StudentsItem {
@@ -251,10 +252,11 @@ const EXAMPLE_DATA: StudentsItem[] = students;
  * (including sorting, pagination, and filtering).
  */
 export class StudentsDataSource extends DataSource<StudentsItem> {
-  data: StudentsItem[] = EXAMPLE_DATA;
+  data: StudentsItem[] ;
 
-  constructor(private paginator: MatPaginator, private sort: MatSort) {
+  constructor(private paginator: MatPaginator, private sort: MatSort,private students) {
     super();
+    this.data = students;
   }
 
   /**
