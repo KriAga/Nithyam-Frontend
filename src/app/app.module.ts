@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,6 +11,11 @@ import { AddSchoolUserComponent } from './add-school-user/add-school-user.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClassComponent } from './class/class.component';
 import { StudentsComponent } from './students/students.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PromoteClassComponent } from './promote-class/promote-class.component';
+import { PromoteStudentsComponent } from './promote-students/promote-students.component';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { AttendanceComponent } from './attendance/attendance.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,10 @@ import { StudentsComponent } from './students/students.component';
     AddSchoolUserComponent,
     ClassComponent,
     StudentsComponent,
+    DashboardComponent,
+    PromoteClassComponent,
+    PromoteStudentsComponent,
+    AttendanceComponent
     
   ],
   imports: [
@@ -43,7 +51,8 @@ import { StudentsComponent } from './students/students.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,20 @@
+<div>
+    <mat-card class="chart-card">
+        <mat-card-content>
+            <mat-grid-list cols="1" rowHeight="300px">
+                <mat-grid-tile>
+                    
+                </mat-grid-tile>
+                <mat-grid-tile>
+                        <canvas baseChart 
+                        [datasets]="lineChartData"
+                        [options]="lineChartOptions"
+                        [legend]="lineChartLegend"
+                        [chartType]="lineChartType"
+                        (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
+</div>

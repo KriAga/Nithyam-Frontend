@@ -7,10 +7,13 @@
       *ngIf="isHandset$ | async">
       <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
     </button>
-    <span >Nithyam</span>
+    <a routerLink="/" style="text-decoration: none;color: white"><span routerLink="/">Nithyam</span></a>
     <div class="topbar-container" *ngIf="!(isHandset$ | async)">
-      <button mat-button class="topbar-element" routerLink="/school/class">
+      <button mat-button class="topbar-element" routerLink="class">
         <i class="fa fa-graduation-cap" aria-hidden="true"></i> Sections
+      </button>
+      <button mat-button class="topbar-element" routerLink="addUser">
+        <i class="fa fa-user-plus" aria-hidden="true"></i>  Add User
       </button>
   </div>
   </mat-toolbar>
@@ -20,10 +23,11 @@
       [mode]="(isHandset$ | async) ? 'push' : 'hide'"
       [opened]="false">
     <mat-nav-list>
-      <a mat-list-item href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Sections</a>
+      <a mat-list-item href="class"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Sections</a>
+      <a mat-list-item href="addUser"><i class="fa fa-user-plus" aria-hidden="true"></i>Add User</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content >
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
 

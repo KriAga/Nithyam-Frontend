@@ -26,7 +26,9 @@ export class StudentsComponent implements OnInit {
     this.studentsService.getStudentsDetails(this.id).subscribe((data)=>{
       console.log(data);
       let students=[]
+
       for (var each in data["result"]){
+        console.log(each)
         let eachStudent={};
         eachStudent["id"]= each;
         eachStudent["Name"] = data["result"][each]["Name"];

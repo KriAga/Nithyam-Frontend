@@ -1,6 +1,6 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="5" rowHeight="175px" gutterSize="10px">
+  <h1 class="mat-h1">Sections</h1>
+  <mat-grid-list [cols]="breakpoint" rowHeight="175px" gutterSize="10px" (window:resize)="onResize($event)"> 
     <mat-grid-tile *ngFor="let card of cards">
       <mat-card class="dashboard-card" (click)="navigate(card.title)">
         <mat-card-content class="dashboard-card-content">
