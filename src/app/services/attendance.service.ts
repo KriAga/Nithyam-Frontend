@@ -28,6 +28,7 @@ export class AttendanceService {
   }
 
   public getMarkedAttendance(){
+    
     return this.http.get(Urls.baseUrl+"initial_attendance");
   }
 }
